@@ -1,16 +1,10 @@
 
-// for arranging the navigation bar 
-
-$(document).ready(function(){
-    // Prevent default behavior of tab links
-    $('#myTabs a').click(function (e) {
-        e.preventDefault();
-        $(this).tab('show');
-    });
-
-    // Activate a specific tab (e.g., "profile")
-    $('#myTabs a[href="#profile"]').tab('show');
+document.querySelector("#menu-icon").addEventListener("click",function(){
+    
+    // document.querySelector("#item-list").style.display="block !important";
+    document.querySelector("#item-list").classList.toggle("active");
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('.nav-link');
@@ -27,6 +21,63 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+ 
+const current_user= localStorage.getItem("email") ;
+if(current_user != null){
+    hideLoginButton();
+    showProfile();
+    let isVisible = false;
+    let profileBtn = document.querySelector(".menu-profile span");
+    let sideBar = document.querySelector("#sidebar");
 
-// here I have settled the menu bar clickable
+    document.querySelector(".loggedIn").addEventListener("click",function(){
+        console.log("profile view")
+        sideBar.classList.add("active");
+        // sideBar.classList.toggle("active");
+        profileBtn.innerText=`${ current_user.slice(0,current_user.length-10)}`;
+        document.querySelector(".loggedIn").style.display="none";
+        // sideBar.insertBefore(profileBtn,sideBar.children[1]);
+    });
+
+    document.querySelector("#sidebar i").addEventListener("click",function(){
+           sideBar.classList.remove("active");
+           document.querySelector(".loggedIn").style.display="block";
+        //    document.querySelector("#sign").appendChild(profileBtn);
+    });
+}
+
+// I have hide the both login and signUP button
+function hideLoginButton(){
+    console.log("User login in this page ");
+    document.querySelectorAll(".nav-sign").forEach((nav) =>{
+              nav.style.display="none";
+     })
+}
+
+// here I have added the profile of person 
+function showProfile(){
+    console.log("profile added");
+    let navSign = document.querySelector("#sign");
+    let profileBtn = document.createElement("button");
+    profileBtn.classList.add("loggedIn");
+    profileBtn.innerHTML=`<i class="fa-solid fa-user profile"></i><span>Profile</span>`;
+    navSign.appendChild(profileBtn);
+}
+
+
+function signOut(){
+    removeUser();
+    let profile = document.querySelector(".loggedIn");
+    profile.remove();
+    document.querySelector("#sidebar").style.display="none";
+    document.querySelectorAll(".nav-sign").forEach((nav)=>{
+        nav.style.display="block";
+    });
+    
+}
+
+function removeUser(){
+    console.log("remove email");
+    localStorage.removeItem("email");
+}
 

@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="nav-right">
-                    <div class="nav-tool">
+                    <div class="nav-tool" id="sign">
                         <div class="nav-sign">
                            <a href="login.html" class="sign-in">Log in</a>
                         </div>
@@ -35,27 +35,29 @@
                     </div>
                 </div>
             </div>
-            <nav class="navbar navbar-expand-lg ">
-                <div class="container-fluid">
-                  <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <nav class="navbar  ">
+                <div class="nav-bottom">
+                  <button class="menu" id="menu-icon" type="button">
                     <i class="fa-solid fa-bars" style="color: #fafafa;"></i>
                   </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mb-lg-0">
+                  
+                  <div class="item-list " id="item-list" >
+                    <ul class="navbar-nav  item-list-content">
                       <li class="nav-item" role="presentation">
-                        <a class="nav-link" href="#Home" id="Home" aria-controls="Home" role="tab" data-toggle="tab"data-link="home">Home</a>
+                        <a class="nav-link"id="menu-line" href="#Home" id="Home" aria-controls="Home" role="tab" data-toggle="tab"data-link="home">Home</a>
                       </li>
                       <li class="nav-item" role="presentation">
-                        <a class="nav-link" href="#Fashion" id="Fashion" aria-controls="Fashion" role="tab" data-toggle="tab"data-link="fashion">Fashion</a>
+  
+                        <a class="nav-link"id="menu-line" href="#Fashion" id="Fashion" aria-controls="Fashion" role="tab" data-toggle="tab"data-link="fashion">Fashion</a>
                       </li>
                       <li class="nav-item" role="presentation">
-                        <a class="nav-link " href="#Jwellery" id="Jwellery" aria-controls="Jwellery" role="tab" data-toggle="tab"data-link="jewellery">Jwellery</a>
+                        <a class="nav-link"id="menu-line" href="#Jwellery" id="Jwellery" aria-controls="Jwellery" role="tab" data-toggle="tab"data-link="jewellery">Jwellery</a>
                       </li>
                       <li class="nav-item" role="presentation">
-                        <a class="nav-link" href="#Electronics" id="Electronics" aria-controls="Electronics" role="tab" data-toggle="tab" data-link="electronics">Electronics</a>
+                        <a class="nav-link"id="menu-line" href="#Electronics" id="Electronics" aria-controls="Electronics" role="tab" data-toggle="tab" data-link="electronics">Electronics</a>
                       </li>
                       <li class="nav-item" role="presentation">
-                        <a class="nav-link" href="#About" id="About"  aria-controls="About" role="tab" data-toggle="tab">About</a>
+                        <a class="nav-link"id="menu-line" href="#About" id="About"  aria-controls="About" role="tab" data-toggle="tab">About</a>
                       </li>
                     </ul>
                   </div>
@@ -63,6 +65,50 @@
               </nav>
         </div>
      </header>
+      <div class="sidebar flex-column flex-shrink-0 p-3 " style="width: 280px;"id="sidebar">
+        <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
+        <button class="loggedIn menu-profile"><i class="fa-solid fa-user "></i><span></span></button>  
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto"id="profile-options">
+        <li class="nav-item">
+          <a href="#" class="nav-link active" aria-current="page">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+            Orders
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+            Products
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+            Wishlist
+          </a>
+        </li>
+        <li>
+          <button  class="nav-link text-white" width="16" onclick="signOut()">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+            Signout
+          </button>
+        </li>
+      </ul>
+      <hr>
+    </div> 
         <div class="pagecontent">
           <div class="desktop-hero"></div> 
           <section  id ="body">
@@ -134,3 +180,18 @@
    <script src="fetchdata.js"></script>
 </body>
 </html> 
+
+
+      <!-- <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">
+          <img src="" alt="my image" width="32" height="32" class="rounded-circle me-2">
+          <strong>mdo</strong>
+        </a>
+        <ul class="dropdown id="menu-line"dropdown-id="menu-line"dark text-small shadow">
+          <li><a class="dropdown-item" href="#">New project...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+      </div> -->
