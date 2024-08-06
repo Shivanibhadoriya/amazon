@@ -12,13 +12,13 @@ body{
     align-items:center;
 }
 .logo img{
-    height:31px;
-    width:103px;
-    margin-top:15px;
+    height: 60px;
+    width: 170px;
+    margin-top: 20px;
 }
 .logo span{
-    margin-top:10px;
-    font-size:14px;
+    margin-top: 36px;
+    font-size: 20px;
 }
 .card{
     width:296px;

@@ -1,14 +1,7 @@
 
-document.querySelector("#menu-icon").addEventListener("click",function(){
-    
-    // document.querySelector("#item-list").style.display="block !important";
-    document.querySelector("#item-list").classList.toggle("active");
-});
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('.nav-link');
-
     links.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
@@ -21,28 +14,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function showMenu() {
+    console.log("i am clicked");
+    var menu = document.getElementById("item-list");
+    if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "block";
+    } else {
+        menu.style.display = "none";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("menu-icon").addEventListener("click", showMenu);
+});
+
+// document.querySelector(".menu-btn").addEventListener("click",function(){
+//     console.log("i am clicked");
+//     document.querySelector("#item-list").classList.toggle("active");
+// });
  
 const current_user= localStorage.getItem("email") ;
 if(current_user != null){
     hideLoginButton();
     showProfile();
-    let isVisible = false;
-    let profileBtn = document.querySelector(".menu-profile span");
     let sideBar = document.querySelector("#sidebar");
 
     document.querySelector(".loggedIn").addEventListener("click",function(){
         console.log("profile view")
         sideBar.classList.add("active");
-        // sideBar.classList.toggle("active");
-        profileBtn.innerText=`${ current_user.slice(0,current_user.length-10)}`;
+        document.querySelector(".loggedIn span").innerText=`${ current_user.slice(0,current_user.length-10)}`;
         document.querySelector(".loggedIn").style.display="none";
-        // sideBar.insertBefore(profileBtn,sideBar.children[1]);
     });
 
     document.querySelector("#sidebar i").addEventListener("click",function(){
            sideBar.classList.remove("active");
            document.querySelector(".loggedIn").style.display="block";
-        //    document.querySelector("#sign").appendChild(profileBtn);
     });
 }
 

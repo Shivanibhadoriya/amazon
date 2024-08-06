@@ -23,8 +23,8 @@
 }
 
 .logo img{
-    height:45px;
-    width:150px;
+    height:40px;
+    width:100px;
 }
 
 .nav-right{
@@ -98,9 +98,6 @@
     width:100%;
     display:flex;
     justify-content: space-around;
-    /* flex-direction: row; */
-    /* flex-wrap:nowrap; */
-    /* display: none; */
 }
 
 .item-list-content{
@@ -109,9 +106,8 @@
     flex-wrap:nowrap;
 }
 
-.menu{
+.menu-btn{
     background-color: #1c2f3a;
-    border: none;
     font-size: 22px;
     margin-left: 20px;
     display: none;
@@ -147,14 +143,17 @@
         display: none;
         flex-direction:column !important;
     }
-    .menu{
-        display: block;
+    .menu-btn{
+        display: flex;
     }
-    #item-list.active{
-        display:block;
-    }
+    
 }
-
+.item-list-content.active{
+    display:block;
+}
+/* #item-list {
+    display: none;
+} */
 
 
 .pagecontent {
