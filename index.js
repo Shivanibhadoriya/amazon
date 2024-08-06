@@ -15,24 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function showMenu() {
-    console.log("i am clicked");
-    var menu = document.getElementById("item-list");
-    if (menu.style.display === "none" || menu.style.display === "") {
-        menu.style.display = "block";
-    } else {
-        menu.style.display = "none";
-    }
-}
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("menu-icon").addEventListener("click", showMenu);
 });
 
-// document.querySelector(".menu-btn").addEventListener("click",function(){
-//     console.log("i am clicked");
-//     document.querySelector("#item-list").classList.toggle("active");
-// });
+document.querySelector(".menu-btn").addEventListener("click",function(){
+    console.log("i am clicked");
+    document.querySelector("#item-list").classList.toggle("active");
+});
  
 const current_user= localStorage.getItem("email") ;
 if(current_user != null){
